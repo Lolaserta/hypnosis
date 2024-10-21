@@ -1,0 +1,29 @@
+paths:
+  /analyze:
+    post:
+      operationId: analyzeProblem
+      summary: Проанализировать проблему
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                problem:
+                  type: string
+                  description: Описание проблемы пользователя
+      responses:
+        '200':
+          description: Успешный анализ
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                    description: Ответ анализа
+        '400':
+          description: Ошибка запроса
+
